@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="CodingSamurai.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .cursor {
+      display: inline-block;
+      width: 1px;
+      background-color: #333;
+      animation: blink 0.7s infinite;
+      margin-left: 3px;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Sanskriti Ranjan</h1>
+    <h4>You are here to know about me!</h4>
+    <p><span class="typed-text"></span><span class="cursor">|</span></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="PhotoSanskriti.jpeg" alt="Sanskriti" class="profile-pic" />
+    <p>I’m a 2nd-year CSE (AI/ML) undergrad at SRMIST with a strong interest in AI/ML, Web Development, and Data Structures & Algorithms. I love to code, solve problems, and actively explore competitive programming platforms like Codeforces. Currently building a strong foundation in front-end development with JavaScript while exploring practical applications of machine learning.
+
+Always curious, always building</p>
+<div>
+    <h4>All about my education</h4>
+    <ul>
+        <li>Completed my 10th Standard from Indirapuram Public School, Crossings Republic</li>
+        <li> Completed my 12th Standard from St. Teresa School, Indirapuram</li>
+        <li> Tried my best in JEE-2024 but my hardwork was not enough.</li>
+        <li> Got admission in SRMIST.</li>
+        <li>With full determination went for B.tech in CSE w/s AIML.</li>
+    </ul>
+    <h4>Grades</h4>
+    <ol type="1.">
+        <li>10th Standard= <b>92.3%</b></li>
+        <li>12th Standard= <b>81.3%</b></li>
+        <li>1st Semester= <b>9.64 CGPA</b></li>
+        <li>2nd Semester= <b>10 CGPA</b></li>
+    </ol>
+</div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>To-Do App:</strong> A simple app to manage daily tasks.</li>
+      <li><strong>Landing Page:</strong> A responsive page for a fictional product.</li>
+      <li><strong>Personal Portfolio:</strong> A simple HTML CSS project.</li>
+      <li><strong>Apna College:</strong> Completing the Sigma 8.0 course and submitting the mini/major projects side-by-side.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <label>Message:</label>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SANSKRITI RANJAN. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for your message! This form is not connected to a backend.");
+      form.reset();
+    });
+
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Web Developer", "Learner", "Coder"];
+    const typingDelay = 100;
+    const erasingDelay = 50;
+    const newTextDelay = 1500;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 200);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
+</body>
+</html>
