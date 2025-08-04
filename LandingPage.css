@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background: #000000;
+  color: #e7e697;
+  line-height: 1.6;
+}
+header {
+  background: #e7e697;
+  color: black;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+section>h2{
+    color: #e7e697;
+}
+header h1 {
+  font-size: 3.5rem;
+}
+#features{
+    color: black;
+}
+header p {
+  margin: 1rem 0;
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: black;
+  color: #e7e697;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+
+.feature-box {
+  background: #ffffff;
+  padding: 1.8rem;
+  flex: 1 1 300px;
+  border-left: 5px solid #e7e697;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.feature-box h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+#signup form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#signup input[type="email"] {
+  padding: 0.7rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#signup button {
+  padding: 0.7rem 1.2rem;
+  background: #e7e697;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#signup button:hover {
+  background: #e7e697;
+}
+
+footer {
+  background: black;
+  color: #ccc;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+}
